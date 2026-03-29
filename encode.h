@@ -17,12 +17,12 @@
 typedef struct _EncodeInfo
 {
     /* Source Image info */
-    char *src_image_fname;    // file name of the source file using pointer
+    char *src_image_fname;   
     FILE *fptr_src_image;
-    char image_data[MAX_IMAGE_BUF_SIZE]; // collect the image info before passing it to the dest file
+    char image_data[MAX_IMAGE_BUF_SIZE]; 
 
     /* Secret File Info */
-    char *secret_fname;      //secret msg 
+    char *secret_fname;       
     FILE *fptr_secret;
     char extn_secret_file[MAX_FILE_SUFFIX];
     char secret_data[MAX_SECRET_BUF_SIZE];
@@ -75,9 +75,6 @@ Status encode_secret_file_size(int file_size, EncodeInfo *encInfo);
 
 /* Encode secret file data*/
 Status encode_secret_file_data(EncodeInfo *encInfo);
-
-/* Encode function, which does the real encoding */
-//Status encode_data_to_image(char *data, int size, FILE *fptr_src_image, FILE *fptr_stego_image); // we didnt use 
 
 /* Encode a byte into LSB of image data array */
 Status encode_byte_to_lsb(char data, char *image_buffer);
